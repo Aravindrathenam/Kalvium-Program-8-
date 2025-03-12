@@ -1,16 +1,16 @@
 import React from 'react';
+import './Result.css';
 
-const Result = ({ score, len, restartQuiz }) => {
-  const percentage = (score / len) * 100;
-  const message = percentage >50 ? "Great job" : "Better luck next time";
-
+const Result = ({ score, total, restartQuiz }) => {
+  const percentage = (score / total) * 100;
+  const message = percentage > 50 ? "Great job!" : "Better luck next time!";
 
   return (
-    <div className="result-box">
+    <div className="result-container">
       <h2>Quiz Completed!</h2>
-      <p>Your Score:</p>
+      <p>Your Score: {score} / {total}</p>
       <p>{message}</p>
-      <button className="restart-btn" onClick={restartQuiz}>
+      <button className="restart-button" onClick={restartQuiz}>
         Restart Quiz
       </button>
     </div>
