@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './Darkbutton.css';
 
-function Darkbutton() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+const Darkbutton = () => {
+  const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
-    setIsDarkMode(! darkMode);
-    document.body.style.background = darkMode ? 'white': 'black';
-    document.body.style.color = darkMode ? 'black' : white;
+    setDarkMode(!darkMode);
+    document.body.style.backgroundColor = darkMode ? 'white' : 'black';
+    document.body.style.color = darkMode ? 'black' : 'white';
   };
 
   return (
@@ -15,7 +15,7 @@ function Darkbutton() {
       <label className="switch">
         <input
           type="checkbox"
-          checked={isDarkMode}
+          checked={darkMode}
           onChange={toggleDarkMode}
           aria-label="Toggle Dark Mode"
         />
@@ -23,6 +23,6 @@ function Darkbutton() {
       </label>
     </div>
   );
-}
+};
 
 export default Darkbutton;
