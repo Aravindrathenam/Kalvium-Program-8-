@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import QuestionChoice from './QuestionChoice';
 
 const QuestionBox = ({ questions, query, selectchoice }) => {
-  const[isHighlighted, setIsHighlighted] = useState(false);
+  const [isHighlighted, setIsHighlighted] = useState(false);
+
   const highlightHandler = () => {
     setIsHighlighted(true);
   };
@@ -20,8 +21,8 @@ const QuestionBox = ({ questions, query, selectchoice }) => {
         <h1>
           Question: {query + 1} out of {questions.length}
         </h1>
-
-        <h2 style={{color: isHighlighted ? 'red':'blue'}>{questions[query].text}</h2>
+        {/* TASK 3: Change color of this text based on highlight */}
+        <h2 style={{ color: isHighlighted ? 'red' : 'blue' }}>{questions[query].text}</h2>
 
         <QuestionChoice
           options={questions[query].options}
